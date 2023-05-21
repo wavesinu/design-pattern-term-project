@@ -1,0 +1,9 @@
+
+*.iml
+*.xml
+*.gradle
+*.jar
+*.properties
+*.jar
+*.bat
+travel-planner/gradlew
