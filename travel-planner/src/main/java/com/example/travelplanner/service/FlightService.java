@@ -1,21 +1,17 @@
 package com.example.travelplanner.service;
 
-import com.example.travelplanner.dao.FlightRepository;
 import com.example.travelplanner.model.Flight;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-public class FlightService {
+public interface FlightService {
+    List<Flight> getAllFlights();
 
-    private final FlightRepository flightRepository;
+    Flight getFlightById(Long id);
 
-    public FlightService(FlightRepository flightRepository) {
-        this.flightRepository = flightRepository;
-    }
+    Flight createFlight(Flight flight);
 
-    public List<Flight> getFlights() {
-        return flightRepository.findAll();
-    }
+    Flight updateFlight(Long id, Flight flight);
+
+    void deleteFlight(Long id);
 }
