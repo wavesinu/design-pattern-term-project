@@ -7,5 +7,5 @@
 *.jar
 *.bat
 travel-planner/gradlew
-*.json
 *.pb
+*.json
