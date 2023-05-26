@@ -16,8 +16,12 @@ public class FlightController {
     }
 
     @GetMapping
-    public ResponseEntity<Void> fetchFlights() {
-        skyscannerService.fetchFlights();
-        return ResponseEntity.ok().build();
+    public ResponseEntity<String> fetchFlights() {
+        try {
+            skyscannerService.fetchFlights();
+            return ResponseEntity.ok("Flights fetched successfully.");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Failed to fetch flights: " + e.getMessage());
+        }
     }
 }
